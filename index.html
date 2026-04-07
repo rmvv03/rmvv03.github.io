@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Buy a Wii</title>
+    <style>
+main {
+    position: relative; /* Makes <main> non-static so the absolute position of #win is relative to <main> */
+}
+
+#win {
+    position: absolute;
+    left: 3.3em;
+    top: 0em;
+    transition-duration: 0.3s; /* Animate the movement */
+}
+
+#question {
+    position: middle;
+
+}
+    </style>
+</head>
+<body>
+    <p id="question">
+        Should I buy a Wii right now?
+    </p>
+    <main>
+        <button id="win">No</button>
+        <a href="https://example.com">
+        <button id="next">Yes</button>
+        </a>
+
+    </main>
+    <script>
+
+// Move the button whenever someone tries to click on it.
+function onMouseOver(e) {
+    const style = e.target.style;
+    if (style.left == "30em") style.left = "10em";
+    else style.left = "30em";
+}
+
+
+document.getElementById("win").onmouseover = onMouseOver;
+    </script>
+</body>
+</html>
